@@ -1,5 +1,5 @@
 # https://github.com/elastic/kibana-docker
-FROM docker.elastic.co/kibana/kibana:5.3.0
+FROM docker.elastic.co/kibana/kibana:5.4.0
 
 # Add your kibana plugins setup here
 # Example: RUN kibana-plugin install <name|url>
@@ -14,5 +14,7 @@ RUN chown -R kibana:kibana /usr/share/kibana/config/
 USER kibana
 
 COPY start.sh /start.sh
+
+RUN /usr/local/bin/kibana-docker 2>&1 | grep -m 1 "Optimization of .* complete in .* seconds" 
 
 ENTRYPOINT ["/start.sh"]

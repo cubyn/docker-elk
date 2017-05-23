@@ -1,5 +1,5 @@
 # https://github.com/elastic/logstash-docker
-FROM blacktop/logstash:5.2
+FROM blacktop/logstash:5.4
 
 # Add your logstash plugins setup here
 # Example: RUN logstash-plugin install logstash-filter-json
